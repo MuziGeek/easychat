@@ -1,14 +1,18 @@
 package com.abin.mallchat.common;
 
-import com.abin.mallchat.common.user.dao.UserDao;
-import com.abin.mallchat.common.user.domain.entity.User;
+import com.abin.mallchat.common.common.thread.MyUncaughtExceptionHandler;
+import com.abin.mallchat.common.common.utils.JwtUtils;
+import com.abin.mallchat.common.user.service.LoginService;
+import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.result.WxMpQrCodeTicket;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -19,10 +23,46 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
+@Slf4j
 public class DaoTest {
     @Autowired
     private WxMpService wxMpService;
+    @Autowired
+    private JwtUtils jwtUtils;
 
+
+    @Test
+    public void jwt() {
+        System.out.println(jwtUtils.createToken(1L));
+        System.out.println(jwtUtils.createToken(1L));
+        System.out.println(jwtUtils.createToken(1L));
+    }
+
+    @Autowired
+    private RedissonClient redissonClient;
+    @Autowired
+    private LoginService loginService;
+
+    @Test
+    public void redis() {
+        String s = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjExMDAyLCJjcmVhdGVUaW1lIjoxNjkzNjYzOTU1fQ.qISTe8UDzggilWqz0HKtGLrkgiG1IRGafS10qHih9iM";
+        Long validUid = loginService.getValidUid(s);
+        System.out.println(validUid);
+    }
+
+    @Autowired
+    private ThreadPoolTaskExecutor threadPoolTaskExecutor;
+
+    @Test
+    public void thread() throws InterruptedException {
+        threadPoolTaskExecutor.execute(()->{
+            if (1 == 1) {
+                log.error("123");
+                throw new RuntimeException("1243");
+            }
+        });
+        Thread.sleep(200);
+    }
 
     @Test
     public void test() throws WxErrorException {
