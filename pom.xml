@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.abin</groupId>
-    <artifactId>mallchat-learning</artifactId>
+    <groupId>com.muzi</groupId>
+    <artifactId>easychat-learning</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>mallchat-chat-server</module>
-        <module>mallchat-framwork</module>
+        <module>easychat-chat-server</module>
+        <module>easychat-framwork</module>
     </modules>
 
     <parent>
@@ -50,8 +50,8 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.abin</groupId>
-                <artifactId>mallchat-common-starter</artifactId>
+                <groupId>com.muzi</groupId>
+                <artifactId>easychat-common-starter</artifactId>
                 <version>${version}</version>
             </dependency>
             <dependency>
