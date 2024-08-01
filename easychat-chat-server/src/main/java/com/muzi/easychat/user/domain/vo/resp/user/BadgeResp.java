@@ -1,4 +1,4 @@
-package com.muzi.easychat.user.domain.vo.resp;
+package com.muzi.easychat.user.domain.vo.resp.user;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

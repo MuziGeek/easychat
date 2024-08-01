@@ -5,8 +5,8 @@ import com.muzi.easychat.common.domain.enums.YesOrNoEnum;
 import com.muzi.easychat.user.domain.entity.ItemConfig;
 import com.muzi.easychat.user.domain.entity.User;
 import com.muzi.easychat.user.domain.entity.UserBackpack;
-import com.muzi.easychat.user.domain.vo.resp.BadgeResp;
-import com.muzi.easychat.user.domain.vo.resp.UserInfoResp;
+import com.muzi.easychat.user.domain.vo.resp.user.BadgeResp;
+import com.muzi.easychat.user.domain.vo.resp.user.UserInfoResp;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
 
 import java.util.Comparator;

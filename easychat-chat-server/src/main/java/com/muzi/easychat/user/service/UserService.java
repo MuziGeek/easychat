@@ -1,9 +1,9 @@
 package com.muzi.easychat.user.service;
 
 import com.muzi.easychat.user.domain.entity.User;
-import com.muzi.easychat.user.domain.vo.req.BlackReq;
-import com.muzi.easychat.user.domain.vo.resp.BadgeResp;
-import com.muzi.easychat.user.domain.vo.resp.UserInfoResp;
+import com.muzi.easychat.user.domain.vo.req.user.BlackReq;
+import com.muzi.easychat.user.domain.vo.resp.user.BadgeResp;
+import com.muzi.easychat.user.domain.vo.resp.user.UserInfoResp;
 
 import java.util.List;
 
