@@ -1,6 +1,7 @@
-package com.muzi.easychat.common.utils;
+package com.abin.mallchat.utils;
 
 import cn.hutool.extra.spring.SpringUtil;
+import com.muzi.easychat.common.utils.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -40,21 +41,16 @@ public class RedisUtils {
         return stringRedisTemplate.execute(redisScript, Collections.singletonList(key), String.valueOf(unit.toSeconds(time)));
     }
 
-    /**
-     * 自增int
-     *
-     * @param key  键
-     * @param time 时间(秒)
-     */
-    public static Integer integerInc(String key, int time, TimeUnit unit) {
-        RedisScript<Long> redisScript = new DefaultRedisScript<>(LUA_INCR_EXPIRE, Long.class);
-        Long result = stringRedisTemplate.execute(redisScript, Collections.singletonList(key), String.valueOf(unit.toSeconds(time)));
-        try {
-            return Integer.parseInt(result.toString());
-        } catch (Exception e) {
-            RedisUtils.del(key);
-            throw e;
-        }
+    public static Long ZSetGet(String key) {
+        return stringRedisTemplate.opsForZSet().zCard(key);
+    }
+
+    public static void ZSetAddAndExpire(String key, long startTime, long expireTime, long currentTime) {
+        stringRedisTemplate.opsForZSet().add(key, String.valueOf(currentTime), currentTime);
+        // 删除周期之前的数据
+        stringRedisTemplate.opsForZSet().removeRangeByScore(key, 0, startTime);
+        // 过期时间窗口长度+时间间隔
+        stringRedisTemplate.expire(key, expireTime, TimeUnit.MILLISECONDS);
     }
 
     /**
