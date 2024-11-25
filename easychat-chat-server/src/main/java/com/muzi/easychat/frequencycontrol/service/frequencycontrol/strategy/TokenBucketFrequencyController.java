@@ -1,7 +1,7 @@
 package com.muzi.easychat.frequencycontrol.service.frequencycontrol.strategy;
 
 
-import com.muzi.easychat.frequencycontrol.FrequencyControlConstant;
+import com.muzi.easychat.common.constant.FrequencyControlConstant;
 import com.muzi.easychat.frequencycontrol.annotation.FrequencyControl;
 import com.muzi.easychat.frequencycontrol.domain.dto.TokenBucketDTO;
 import com.muzi.easychat.frequencycontrol.mannager.TokenBucketManager;

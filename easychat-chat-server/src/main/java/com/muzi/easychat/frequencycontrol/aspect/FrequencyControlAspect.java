@@ -2,11 +2,12 @@ package com.muzi.easychat.frequencycontrol.aspect;
 
 
 import cn.hutool.core.util.StrUtil;
-import com.abin.frequencycontrol.annotation.FrequencyControl;
-import com.abin.frequencycontrol.service.frequencycontrol.FrequencyControlUtil;
-import com.abin.frequencycontrol.util.RequestHolder;
-import com.abin.mallchat.common.FrequencyControlConstant;
-import com.abin.mallchat.utils.SpElUtils;
+
+import com.muzi.easychat.common.utils.RequestHolder;
+import com.muzi.easychat.common.utils.SpElUtils;
+import com.muzi.easychat.common.constant.FrequencyControlConstant;
+import com.muzi.easychat.frequencycontrol.annotation.FrequencyControl;
+import com.muzi.easychat.frequencycontrol.service.frequencycontrol.FrequencyControlUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -25,7 +26,7 @@ import java.util.Map;
 @Aspect
 @Component
 public class FrequencyControlAspect {
-    @Around("@annotation(com.abin.frequencycontrol.annotation.FrequencyControl)||@annotation(com.abin.frequencycontrol.annotation.FrequencyControlContainer)")
+    @Around("@annotation(com.muzi.easychat.frequencycontrol.annotation.FrequencyControl)||@annotation(com.muzi.easychat.frequencycontrol.annotation.FrequencyControlContainer)")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         Method method = ((MethodSignature) joinPoint.getSignature()).getMethod();
         FrequencyControl[] annotationsByType = method.getAnnotationsByType(FrequencyControl.class);

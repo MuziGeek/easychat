@@ -3,7 +3,7 @@ package com.muzi.easychat.common.config;
 
 import com.muzi.easychat.common.utils.sensitiveWord.DFAFilter;
 import com.muzi.easychat.common.utils.sensitiveWord.SensitiveWordBs;
-import com.muzi.easychat.sensitive.MyWordFactory;
+import com.muzi.easychat.common.utils.sensitiveWord.MyWordFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

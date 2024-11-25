@@ -1,8 +1,9 @@
 package com.muzi.easychat.frequencycontrol.intecepter;
 
 import cn.hutool.extra.servlet.ServletUtil;
-import com.abin.frequencycontrol.domain.dto.RequestInfo;
-import com.abin.frequencycontrol.util.RequestHolder;
+
+import com.muzi.easychat.common.domain.dto.RequestInfo;
+import com.muzi.easychat.common.utils.RequestHolder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;

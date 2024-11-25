@@ -1,8 +1,8 @@
-package com.muzi.easychat.sensitive.mapper;
+package com.muzi.easychat.common.utils.sensitiveWord.mapper;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.muzi.easychat.sensitive.domain.SensitiveWord;
+import com.muzi.easychat.common.utils.sensitiveWord.domain.SensitiveWord;
 
 /**
  * 敏感词Mapper

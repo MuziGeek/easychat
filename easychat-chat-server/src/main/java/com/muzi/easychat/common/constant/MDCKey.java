@@ -1,4 +1,4 @@
-package com.muzi.easychat.frequencycontrol;
+package com.muzi.easychat.common.constant;
 
 public interface MDCKey {
     String TID = "tid";

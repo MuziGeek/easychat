@@ -1,4 +1,4 @@
-package com.abin.mallchat.utils;
+package com.muzi.easychat.common.utils;
 
 import cn.hutool.extra.spring.SpringUtil;
 import com.muzi.easychat.common.utils.JsonUtils;

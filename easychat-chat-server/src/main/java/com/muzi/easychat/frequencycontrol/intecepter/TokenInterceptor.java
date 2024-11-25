@@ -1,7 +1,8 @@
 package com.muzi.easychat.frequencycontrol.intecepter;
 
-import com.abin.frequencycontrol.exception.HttpErrorEnum;
-import com.abin.mallchat.common.MDCKey;
+
+import com.muzi.easychat.common.constant.MDCKey;
+import com.muzi.easychat.frequencycontrol.exception.HttpErrorEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 import org.springframework.core.annotation.Order;

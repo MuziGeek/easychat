@@ -1,9 +1,7 @@
-package com.muzi.easychat.sensitive;
+package com.muzi.easychat.common.utils.sensitiveWord;
 
 
-import com.muzi.easychat.common.utils.sensitiveWord.IWordFactory;
-import com.muzi.easychat.sensitive.dao.SensitiveWordDao;
-import com.muzi.easychat.sensitive.domain.SensitiveWord;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

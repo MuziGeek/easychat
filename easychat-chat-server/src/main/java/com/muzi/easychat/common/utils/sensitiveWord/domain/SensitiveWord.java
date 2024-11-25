@@ -1,4 +1,4 @@
-package com.muzi.easychat.sensitive.domain;
+package com.muzi.easychat.common.utils.sensitiveWord.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
